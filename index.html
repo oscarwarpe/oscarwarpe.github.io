@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
+    <style>
+        #title{
+            background-color: ghostwhite; 
+            text-align: center; 
+        }
+        #game{
+            background-color: aliceblue; 
+            width: 50em; 
+            height: 50em; 
+            margin: auto; 
+            border-color: aqua;
+            border-style: outset; 
+            border-width: 1em;
+        }
+        .tile{
+            background-color: aquamarine; 
+            width: 5em; 
+            height: 5em; 
+            border-style: inherit; 
+            border-color: aquamarine; 
+            display: inline-block; 
+            border-width: 0.1em; 
+        }
+    </style>
 </head>
 <body>
-    Snake 
+    <h1 id="title">Snake</h1>
+
+    <div id="game">
+        
+    </div>
+
     <script>
-        var snakeSize = 1 
-        var gridSize = 10 
+        var snakeSize = 1; 
+        var gridSize = 10; 
+
+        var board = document.getElementById("game"); 
+
+        for (var i = 0; i < gridSize; i++){
+            board.innerHTML += "<div class='tile' id='" + i + "'></div>" ; 
+        }
     </script>
     
 </body>
