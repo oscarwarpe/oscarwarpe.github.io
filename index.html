@@ -1,66 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oscarwarpe</title>
+<html>
     <style>
-        html{
-            position: fixed;
-            margin: auto;
+        .flex-container{
+            background-color: black; 
+            margin: 100px;
+            padding: 100px; 
+            font-size: 50px; 
+        } 
+        h1{
+            color: white; 
         }
-        body{
-            position: fixed;
-            margin: auto;
-        }
-        #title{
-            background-color: ghostwhite; 
-            text-align: center; 
-            font-family: "Lucida Console", "Courier New", monospace;
-            font-size: 2.5em;
-        }
-        .border{
-            background-color: aliceblue; 
-            width: 15em; 
-            height: 7em; 
-            margin: auto; 
-            border-color: aqua;
-            border-style: outset; 
-            border-width: 0.5em;
-        }
-        .tile{
-            background-color: aquamarine; 
-            width: 5em; 
-            height: 5em; 
-            border-style: inherit; 
-            border-color: aquamarine; 
-            display: inline-block; 
-            border-width: 0.1em; 
-        }
-    </style>
-</head>
-<body>
-    <h1 id="title">Welcome.</h1>
+    </style> 
+    <body> 
+        <div class="flex-container">
+            <div>
+                <h1>
+                    0
+                </h1>
+            </div>
+            
+            <div>
+                <h1>
+                    1
+                </h1>
+            </div>
+            
+            <div>
+                <h1>
+                    1
+                </h1>
+            </div>
+            
+            <div>
+                <h1>
+                    0
+                </h1>
+            </div>
+            
+            <div>
+                <h1>
+                    1
+                </h1>
+            </div>
 
-    <div class="border"></div>
-    <div class="border">
-        <div class="border"></div>
-        <div class="border"></div>
-        <div class="border"></div>
-    </div>
-    <div class="border"></div>
-    <script>
-        var snakeSize = 1; 
-        var gridSize = 10; 
-
-        //var board = document.getElementById("game"); 
-        /*
-        for (var i = 0; i < gridSize; i++){
-            board.innerHTML += "<div class='tile' id='" + i + "'></div>" ; 
-        }	
-        */
-        //board.innerHTML = "";
-    </script>
-    
-</body>
+        </div>
+    </body>
 </html>
