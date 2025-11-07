@@ -1,351 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #ccc;
-            background: #1a1a1a;
-        }
-
-        nav {
-            background: #111;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 1;
-            color: #00aaff;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 5rem 2rem;
-            scroll-margin-top: 60px;
-        }
-
-        #home {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: #111;
-        }
-
-        #home h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            opacity: 0.9;
-        }
-
-        #home p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        .primary-cta {
-            margin-top: 2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.75rem 1.6rem;
-            border-radius: 999px;
-            border: 1px solid rgba(0, 170, 255, 0.35);
-            background: rgba(0, 170, 255, 0.12);
-            color: #00aaff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .primary-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 170, 255, 0.25);
-        }
-
-        #home #typing-text {
-            border-right: 1px solid #00aaff;
-            display: inline-block;
-            min-width: 10px;
-            color: #00aaff;
-        }
-
-        #canvas-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        #projects {
-            background: #1a1a1a;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #222;
-            border-radius: 12px;
-            padding: 1.6rem;
-            box-shadow: 0 2px 10px rgba(0, 170, 255, 0.1);
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            color: inherit;
-            text-decoration: none;
-            border: 1px solid rgba(0, 170, 255, 0.08);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 18px rgba(0, 170, 255, 0.25);
-            border-color: rgba(0, 170, 255, 0.35);
-        }
-
-        #contact {
-            background: #111;
-            text-align: center;
-        }
-
-        .contact-links {
-            margin-top: 1rem;
-        }
-
-        .contact-links a {
-            color: #00aaff;
-            margin: 0 1rem;
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        .contact-links a:hover {
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #home h1 {
-                font-size: 1.8rem;
-            }
-
-            #home p {
-                font-size: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oscar Warpe — Portfolio</title>
+    <meta
+      name="description"
+      content="Oscar Warpe designer og bygger digitale opplevelser som driver Warpedev-universet fremover."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
     <nav>
-        <ul>
-            <li><a href="#home">Origin</a></li>
-            <li><a href="#projects">Works</a></li>
-            <li><a href="#contact">Connect</a></li>
-        </ul>
+      <ul>
+        <li><a href="#home">Origin</a></li>
+        <li><a href="#now">Now</a></li>
+        <li><a href="#projects">Works</a></li>
+        <li><a href="#contact">Connect</a></li>
+      </ul>
     </nav>
 
     <section id="home">
-        <div id="canvas-container">
-            <canvas id="particle-canvas"></canvas>
-        </div>
-        <h1>Whispers of Code</h1>
-        <p>I am a <span id="typing-text"></span></p>
-        <a class="primary-cta" href="https://warpedev.github.io/" target="_blank" rel="noreferrer">Se prosjektene →</a>
+      <div id="canvas-container">
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+      </div>
+      <h1>Whispers of Code</h1>
+      <p>I am a <span id="typing-text"></span></p>
+      <a
+        class="cta-pill"
+        href="https://warpedev.github.io/"
+        target="_blank"
+        rel="noreferrer"
+        >Se prosjektene →</a
+      >
+    </section>
+
+    <section id="now">
+      <h2>Akkurat nå</h2>
+      <p class="lead">
+        En rask radar over hva jeg bygger og lærer denne uken.
+      </p>
+      <ul class="now-list">
+        <li>
+          <span>CodeFront</span>
+          <p>
+            Ny live-feed trekker NRK, E24, Hacker News og Reddit inn i én rolig
+            lunsjvisning. Perfekt for å holde fokus uten doomscrolling.
+          </p>
+        </li>
+        <li>
+          <span>News Feed API</span>
+          <p>
+            Backend som normaliserer alle kildene ovenfor. Bygger cache,
+            filtrering og webhook-varsler for Slack/Matrix.
+          </p>
+        </li>
+        <li>
+          <span>Studieboost</span>
+          <p>
+            MAT221-crashkurs og INF161 lab 8/9 leveres med klare planer, slik at
+            desember-eksamenene blir mer rytmiske.
+          </p>
+        </li>
+      </ul>
     </section>
 
     <section id="projects">
-        <h2>Utvalgte</h2>
-        <p style="text-align:center; margin-bottom:2rem; opacity:0.75;">Tre små prosjekter som driver Warpedev-universet fremover.</p>
-        <div class="project-grid">
-            <a class="project-card" href="https://spontis-app.github.io" target="_blank" rel="noreferrer">
-                <h3>Spontis</h3>
-                <p>Kultur og øyeblikk i bevegelse for Bergen. Signalbasert eventradar som oppdateres løpende.</p>
-                <span style="display:block; margin-top:1rem; color:#00aaff; font-weight:600;">Utforsk →</span>
-            </a>
-            <a class="project-card" href="https://codefront-app.github.io/" target="_blank" rel="noreferrer">
-                <h3>CodeFront</h3>
-                <p>Start dagen med én rolig feed for tech-nyheter, git-kort og hurtigverktøy.</p>
-                <span style="display:block; margin-top:1rem; color:#00aaff; font-weight:600;">Åpne CodeFront →</span>
-            </a>
-            <a class="project-card" href="https://growr-app.github.io/" target="_blank" rel="noreferrer">
-                <h3>Growr</h3>
-                <p>Finn internships, sommerjobber og trainee-stillinger i Norge med søk og raske filtre.</p>
-                <span style="display:block; margin-top:1rem; color:#00aaff; font-weight:600;">Finn muligheter →</span>
-            </a>
-        </div>
+      <h2>Utvalgte</h2>
+      <p class="lead">
+        Tre små prosjekter som driver Warpedev-universet fremover.
+      </p>
+      <div class="project-grid">
+        <a
+          class="project-card"
+          href="https://spontis-app.github.io"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h3>Spontis</h3>
+          <p>
+            Kultur og øyeblikk i bevegelse for Bergen. Signalbasert eventradar
+            som oppdateres løpende.
+          </p>
+          <span>Utforsk →</span>
+        </a>
+        <a
+          class="project-card"
+          href="https://codefront-app.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h3>CodeFront</h3>
+          <p>
+            Start dagen med én rolig feed for tech-nyheter, git-kort og
+            hurtigverktøy.
+          </p>
+          <span>Åpne CodeFront →</span>
+        </a>
+        <a
+          class="project-card"
+          href="https://growr-app.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h3>Growr</h3>
+          <p>
+            Finn internships, sommerjobber og trainee-stillinger i Norge med
+            søk og raske filtre.
+          </p>
+          <span>Finn muligheter →</span>
+        </a>
+      </div>
     </section>
 
     <section id="contact">
-        <h2>Connect</h2>
-        <p>Send a message through the void.</p>
-        <div class="contact-links">
-            <a href="mailto:example@email.com">Signal</a>
-            <a href="https://github.com">Repository</a>
-            <a href="https://linkedin.com">Network</a>
-        </div>
+      <h2>Connect</h2>
+      <p>Si hei hvis du vil samarbeide, sparre, eller booke Warpedev.</p>
+      <div class="contact-links">
+        <a href="mailto:hallo@warpedev.no">Email</a>
+        <a href="https://github.com/oscarwarpe" target="_blank" rel="noreferrer"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/oscarwarpe/"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
+      </div>
     </section>
 
-    <script>
-        // Smooth scrolling for nav links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Particle Background
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 30;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = Math.random() * 0.5 - 0.25;
-                this.vy = Math.random() * 0.5 - 0.25;
-                this.radius = 2;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 170, 255, 0.3)';
-                ctx.fill();
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-                particles.forEach(p2 => {
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = 'rgba(0, 170, 255, 0.1)';
-                        ctx.stroke();
-                    }
-                });
-            });
-            requestAnimationFrame(animateParticles);
-        }
-
-        canvas.addEventListener('mousemove', (e) => {
-            particles.forEach(p => {
-                const dx = e.clientX - p.x;
-                const dy = e.clientY - p.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 100) {
-                    p.vx += dx * 0.005;
-                    p.vy += dy * 0.005;
-                }
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        animateParticles();
-
-        // Typing Effect
-        const phrases = ['Crafter of the unseen', 'Weaver of digital threads', 'Shaper of virtual realms'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingText = document.getElementById('typing-text');
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            if (!isDeleting) {
-                typingText.textContent = currentPhrase.substring(0, charIndex++);
-                if (charIndex > currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, 1500);
-                } else {
-                    setTimeout(type, 100);
-                }
-            } else {
-                typingText.textContent = currentPhrase.substring(0, charIndex--);
-                if (charIndex < 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, 500);
-                } else {
-                    setTimeout(type, 50);
-                }
-            }
-        }
-        type();
-
-    </script>
-</body>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
 </html>
